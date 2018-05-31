@@ -40,7 +40,7 @@
                   <div class="vacancy-name">Ведущий менеджер по продажам МСБ</div>
                </div>
                <div class="become-a-manager">
-                  <a class="button" href="https://interview.skillaz.co/?vacancyId=5af46d5c194d5c00010b926a">Стань частью команды</a>
+                  <a class="button gotointerview" href="https://interview.skillaz.co/?vacancyId=5af46d5c194d5c00010b926a">Стань частью команды</a>
                   <div class="watch-video"><img src="./images/play-video.svg"><span>Смотреть видео</span></div>
                </div>
             </div>
@@ -73,7 +73,7 @@
                <div class="conditions-item"><img src="./images/purposeful-icon.svg"><span>Целеустремлен и точно знаешь чего хочешь!</span></div>
                <div class="conditions-item"><img src="./images/active.svg"><span>Активный по жизни</span></div>
             </div>
-            <a class="button" href="https://interview.skillaz.co/?vacancyId=5af46d5c194d5c00010b926a">Cтань частью команды</a>
+            <a class="button gotointerview" href="https://interview.skillaz.co/?vacancyId=5af46d5c194d5c00010b926a">Cтань частью команды</a>
          </div>
       </div>
       <div class="advantages">
@@ -114,7 +114,7 @@
                   <div class="status">Мы свяжемся с тобой!</div>
                </div>
             </div>
-            <a class="button" href="https://interview.skillaz.co/?vacancyId=5af46d5c194d5c00010b926a">Стань частью команды</a>
+            <a class="button gotointerview" href="https://interview.skillaz.co/?vacancyId=5af46d5c194d5c00010b926a">Стань частью команды</a>
          </div>
       </div>
       <div class="gallery">
@@ -148,6 +148,28 @@
       <div class="licence">
          <div class="container">Уральский банк реконструкции и развития, 1990-2018 Лицензия ЦБ РФ №429 от 06.02.2015</div>
       </div>
+	<script>
+    var GOTOINTERVIEWURL = "https://interview.skillaz.co/?vacancyId=5af46d5c194d5c00010b926a";
+    document.addEventListener("DOMContentLoaded", function () {
+      var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+          sURLVariables = sPageURL.split('&'),
+          sParameterName,
+          i;
+        for (i = 0; i < sURLVariables.length; i++) {
+          sParameterName = sURLVariables[i].split('=');
+          if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+          }
+        }
+      };
+      var invDetId = getUrlParameter('skillazInterviewId');
+      var e = document.getElementsByClassName("gotointerview");
+      var url = invDetId ? 'https://interview.skillaz.co/' + invDetId : GOTOINTERVIEWURL;
+      for (var i = 0; i < e.length; i++) {
+        e[i].setAttribute('href', url);
+      }
+    });
+  </script>
    </body>
 </html>
-15</div></div></body></html>
